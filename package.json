@@ -4,12 +4,23 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "ts-node ./src/index.ts",
+    "build": "tsc",
+    "watch": "tsc -w",
+    "start": "nodemon node .build/index.js",
+    "dev": "concurrently npm run watch && npm run start"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "data/*"
+    ]
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "concurrently": "^8.2.1",
+    "nodemon": "^3.0.1",
     "typescript": "^5.2.2"
   }
 }
