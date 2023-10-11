@@ -65,6 +65,8 @@
     // "emitDeclarationOnly": true,                      /* Only output d.ts files and not JavaScript files. */
     // "sourceMap": true,                                /* Create source map files for emitted JavaScript files. */
     // "inlineSourceMap": true,                          /* Include sourcemap files inside the emitted JavaScript. */
+
+    // 指定输出所有代码到一个 js 文件中（不能用 common.js 只能 amd 或 system）
     // "outFile": "./",                                  /* Specify a file that bundles all outputs into one JavaScript file. If 'declaration' is true, also designates a file that bundles all .d.ts output. */
     // 指定输出的目录
      "outDir": "build",                                   /* Specify an output folder for all emitted files. */

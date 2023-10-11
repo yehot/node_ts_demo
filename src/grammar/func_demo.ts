@@ -5,7 +5,7 @@ function test<T, P>(first: T, second: P): string {
 }
 
 interface Item {
-  name: string,
+  name: string;
 }
 
 // 泛型 T extends
@@ -13,3 +13,5 @@ class Data<T extends Item> {
   constructor(private data: T) {
   }
 }
+
+test(1, 2);
