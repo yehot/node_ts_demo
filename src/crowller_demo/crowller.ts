@@ -2,8 +2,11 @@ import fs from 'fs';
 import path from 'path';
 import superagent from 'superagent';
 import * as cheerio from "cheerio";
+import {Analyzer} from "./analyzer_interface.js";
+import {SomeAnalyzer} from "./someAnalyzer.js";
 
-export default class Crawler {
+
+class Crawler {
   private secret = 'secretKey';
   private url = '';
   
@@ -35,9 +38,17 @@ export default class Crawler {
     fs.writeFileSync(filePath, JSON.stringify(content));
   }
   
-  constructor() {
-    this.test();
+  constructor(private analyzer: Analyzer) {
+    // this.test();
+    this.analyzer.analyze("1", "2");
     // this.getRawHtml().then(() => {
     // });
   }
+}
+
+export default function test() {
+  const a1 = new SomeAnalyzer();
+  const c1 = new Crawler(a1);
+  
+  
 }

@@ -12,7 +12,8 @@
   },
   "nodemonConfig": {
     "ignore": [
-      "data/*"
+      "data/*",
+      "node_modules/*"
     ]
   },
   "keywords": [],
@@ -21,8 +22,7 @@
   "devDependencies": {
     "concurrently": "^8.2.1",
     "nodemon": "^3.0.1",
-    "typescript": "^5.2.2",
-    "ts-loader": "^9.4.3"
+    "typescript": "^5.2.2"
   },
   "type": "module",
   "dependencies": {
