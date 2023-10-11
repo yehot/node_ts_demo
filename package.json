@@ -7,7 +7,7 @@
     "test": "ts-node ./src/index.ts",
     "build": "tsc",
     "watch": "tsc -w",
-    "start": "nodemon node .build/index.js",
+    "start": "tsc && node ./build/index.js",
     "dev": "concurrently npm run watch && npm run start"
   },
   "nodemonConfig": {
@@ -21,11 +21,14 @@
   "devDependencies": {
     "concurrently": "^8.2.1",
     "nodemon": "^3.0.1",
-    "typescript": "^5.2.2"
+    "typescript": "^5.2.2",
+    "ts-loader": "^9.4.3"
   },
   "type": "module",
   "dependencies": {
-    "superagent": "^8.1.2",
-    "@types/superagent": "^4.1.19"
+    "@types/cheerio": "^0.22.32",
+    "@types/superagent": "^4.1.19",
+    "cheerio": "1.0.0-rc.12",
+    "superagent": "^8.1.2"
   }
 }
