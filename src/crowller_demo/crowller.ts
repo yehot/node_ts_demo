@@ -1,7 +1,9 @@
-import superagent from 'superagent'
+import fs from 'fs';
+import path from 'path';
+import superagent from 'superagent';
 import * as cheerio from "cheerio";
 
-class Crawler {
+export default class Crawler {
   private secret = 'secretKey';
   private url = '';
   
@@ -20,11 +22,22 @@ class Crawler {
     console.log(item.length);
   }
   
+  test() {
+    const filePath = path.resolve('./data/demo.json');
+    
+    let content = {};
+    if (fs.existsSync(filePath)) {
+      const str = fs.readFileSync(filePath, 'utf-8');
+      content = JSON.parse(str);
+    } else {
+      content = { "1": 2};
+    }
+    fs.writeFileSync(filePath, JSON.stringify(content));
+  }
   
   constructor() {
-    this.getRawHtml().then(() => {
-    });
+    this.test();
+    // this.getRawHtml().then(() => {
+    // });
   }
 }
-
-const c1 = new Crawler();
