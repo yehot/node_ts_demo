@@ -5,12 +5,12 @@ type Cat = {
   eat(): void;
 }
 
-function test(dog: Cat) {
+function test3(dog: Cat) {
   dog.eat();
   console.log(dog.name);
 }
 
-test({
+test3({
   name: "1",
   eat() {
   }
@@ -23,7 +23,7 @@ const d1 = {
   }
 }
 d1.eat();
-test(d1)
+test3(d1)
 
 // 定义一个接口
 interface Person {
